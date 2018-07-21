@@ -4,7 +4,7 @@ apply plugin: 'application'
 
 version '0.0.1-SNAPSHOT'
 
-mainClassName = 'org.dsa.iot.template.Main'
+mainClassName = 'com.ccbac.chaos.Main'
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
 

@@ -1,4 +1,4 @@
-package org.dsa.iot.template;
+package com.ccbac.chaos;
 
 import org.dsa.iot.dslink.DSLink;
 import org.dsa.iot.dslink.DSLinkFactory;
