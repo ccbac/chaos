@@ -25,7 +25,7 @@ tasks.withType(FindBugs) {
 
 run {
     args System.getProperty("exec.args", "").split()
-    workingDir project.buildDir
+    workingDir project.projectDir
 }
 
 applicationDistribution.from new File(project.projectDir, "/dslink.json")

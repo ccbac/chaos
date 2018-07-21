@@ -2,6 +2,14 @@
 
 DSLink to provide values for testing and demonstration.
 
+## Development
+
+### Running
+
+```sh
+./gradlew run -Dexec.args="-b http://localhost:8080/conn"
+```
+
 ## Building and running distributions
 
 1. Run `./gradlew build distZip`
