@@ -31,7 +31,7 @@ public class Main extends DSLinkHandler {
 
         rootNode = new RootNode(superRoot);
 
-        Objects.getDaemonThreadPool().scheduleWithFixedDelay(GeneratedValueNode::updateAllValues, 0, 20, TimeUnit.SECONDS);
+        Objects.getDaemonThreadPool().scheduleWithFixedDelay(GeneratedValueNode::updateAllValues, 0, 1, TimeUnit.SECONDS);
 
         LOGGER.info("Initialized");
     }

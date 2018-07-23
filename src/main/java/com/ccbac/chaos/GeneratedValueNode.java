@@ -35,7 +35,13 @@ public class GeneratedValueNode {
     }
 
     public static GeneratedValueNode restoreSession(Node node) {
-        RandomValueNode valueNode = RandomValueNode.createFromNode(node);
+        GeneratedValueNode valueNode = null;
+        if (valueNode == null) {
+            valueNode = RandomValueNode.createFromNode(node);
+        }
+        if (valueNode == null) {
+            valueNode = WaveformValueNode.createFromNode(node);
+        }
         if (valueNode != null) {
             valueNodes.put(node.getName(), valueNode);
             return valueNode;
