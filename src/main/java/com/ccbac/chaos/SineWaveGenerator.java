@@ -12,12 +12,12 @@ public class SineWaveGenerator extends WaveformGenerator {
         this.periodSeconds = periodSeconds;
     }
 
-    public Double nextValue() {
-        Double secondsElapsed = System.currentTimeMillis() / 1000.0;
+    public Double nextValue(long millisecondsElapsed) {
+        Double secondsElapsed = millisecondsElapsed / 1000.0;
         Double radians = ((secondsElapsed % periodSeconds) / periodSeconds) * Math.PI * 2;
         Double cosine = Math.cos(radians);
         Double range = (maximum - minimum);
-        return ((cosine / 1) / 2) * range + minimum;
+        return minimum + (((cosine + 1) / 2) * range);
     }
 
 }

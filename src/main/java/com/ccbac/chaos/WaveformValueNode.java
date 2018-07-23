@@ -24,7 +24,7 @@ public class WaveformValueNode extends GeneratedValueNode {
 
     public void updateValue() {
         node.setValueType(ValueType.NUMBER);
-        node.setValue(new Value(waveformGenerator.nextValue()));
+        node.setValue(new Value(waveformGenerator.nextValue(System.currentTimeMillis())));
     }
 
     public static WaveformValueNode add(Node parent, Value name, Value minimum, Value maximum, Value periodSeconds) {
