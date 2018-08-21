@@ -14,7 +14,7 @@ public class GeneratedValueNode {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GeneratedValueNode.class);
 
-    protected static Hashtable<String, GeneratedValueNode> valueNodes = new Hashtable<String, GeneratedValueNode>();
+    private static final Hashtable<String, GeneratedValueNode> valueNodes = new Hashtable<String, GeneratedValueNode>();
 
     protected Node node;
 
