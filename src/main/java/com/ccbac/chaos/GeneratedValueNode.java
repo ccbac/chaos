@@ -14,13 +14,13 @@ public class GeneratedValueNode {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GeneratedValueNode.class);
 
-    protected static Hashtable<String, GeneratedValueNode> valueNodes = new Hashtable<String, GeneratedValueNode>();
+    private static Hashtable<String, GeneratedValueNode> valueNodes = new Hashtable<String, GeneratedValueNode>();
 
-    protected Node node;
+    Node node;
 
     static final private String ACTION_DELETE = "Delete";
 
-    protected GeneratedValueNode(Node node) {
+    GeneratedValueNode(Node node) {
         this.node = node;
         makeDeleteAction();
     }
