@@ -7,17 +7,9 @@ jobs:
         environment:
     steps:
       - checkout
-      - restore_cache:
-          keys:
-          - goose-{{ .Branch }}-{{ checksum "build.gradle" }}
-          - goose-master-{{ checksum "build.gradle" }}
       - run:
           name: assemble
           command: ./gradlew assemble
-      - save_cache:
-          key: goose-{{ .Branch }}-{{ checksum "build.gradle" }}
-          paths:
-            - "~/chaos/build"
       - run:
           name: test
           command: ./gradlew test
