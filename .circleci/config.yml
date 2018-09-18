@@ -7,9 +7,17 @@ jobs:
         environment:
     steps:
       - checkout
+      - restore_cache:
+          keys:
+          - chaos-{{ .Branch }}-{{ checksum "build.gradle" }}
+          - chaos-master-{{ checksum "build.gradle" }}
       - run:
-          name: assemble
-          command: ./gradlew assemble
+          name: compile
+          command: ./gradlew assemble compileTestJava
+      - save_cache:
+          key: chaos-{{ .Branch }}-{{ checksum "build.gradle" }}
+          paths:
+            - "~/.gradle"
       - run:
           name: test
           command: ./gradlew test
@@ -19,4 +27,4 @@ workflows:
   version: 2
   test-and-deploy:
     jobs:
-      - test
+      - test:
