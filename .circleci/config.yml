@@ -12,8 +12,8 @@ jobs:
           - goose-{{ .Branch }}-{{ checksum "build.gradle" }}
           - goose-master-{{ checksum "build.gradle" }}
       - run:
-          name: build
-          command: ./gradlew build
+          name: assemble
+          command: ./gradlew assemble
       - save_cache:
           key: goose-{{ .Branch }}-{{ checksum "build.gradle" }}
           paths:
