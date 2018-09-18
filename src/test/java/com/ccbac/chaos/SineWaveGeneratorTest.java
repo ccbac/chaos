@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SineWaveGeneratorTest {
 
     @Test
-    public void testPositiveRange() {
+    void testPositiveRange() {
         SineWaveGenerator generator = new SineWaveGenerator(10.0, 20.0, 12.0);
         assertEquals(20.0, generator.nextValue(0), 0.001);
         assertEquals(15.0, generator.nextValue(3000), 0.001);
@@ -19,7 +19,7 @@ class SineWaveGeneratorTest {
     }
 
     @Test
-    public void testStraddlingRange() {
+    void testStraddlingRange() {
         SineWaveGenerator generator = new SineWaveGenerator(-10.0, 10.0, 12.0);
         assertEquals(10.0, generator.nextValue(0), 0.001);
         assertEquals(0.0, generator.nextValue(3000), 0.001);
@@ -30,7 +30,7 @@ class SineWaveGeneratorTest {
     }
 
     @Test
-    public void testNegativeRange() {
+    void testNegativeRange() {
         SineWaveGenerator generator = new SineWaveGenerator(-20.0, -10.0, 12.0);
         assertEquals(-10.0, generator.nextValue(0), 0.001);
         assertEquals(-15.0, generator.nextValue(3000), 0.001);
