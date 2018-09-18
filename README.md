@@ -19,3 +19,10 @@ DSLink to provide values for testing and demonstration.
 5. Run `./bin/chaos -b http://localhost:8080/conn`
 
 Note: `http://localhost:8080` is the url to the DSA broker that needs to have been installed prior.
+
+## Running tests
+
+To run all the tests in `src/test`, simply run
+```sh
+./gradlew test
+```

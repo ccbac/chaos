@@ -1,5 +1,4 @@
 apply plugin: 'java'
-apply plugin: 'findbugs'
 apply plugin: 'application'
 
 version '0.0.1-SNAPSHOT'
@@ -14,6 +13,8 @@ repositories {
 
 dependencies {
     compile 'org.iot-dsa:dslink:0.14.1'
+    testCompile("org.junit.jupiter:junit-jupiter-api:5.3.1")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.3.1")
 }
 
 tasks.withType(FindBugs) {
@@ -26,6 +27,12 @@ tasks.withType(FindBugs) {
 run {
     args System.getProperty("exec.args", "").split()
     workingDir project.projectDir
+}
+
+test {
+    useJUnitPlatform {
+        includeEngines 'junit-jupiter'
+    }
 }
 
 applicationDistribution.from new File(project.projectDir, "/dslink.json")
