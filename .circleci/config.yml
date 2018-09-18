@@ -1,0 +1,30 @@
+version: 2
+jobs:
+  test:
+    working_directory: ~/chaos
+    docker:
+      - image: circleci/openjdk
+        environment:
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          - goose-{{ .Branch }}-{{ checksum "build.gradle" }}
+          - goose-master-{{ checksum "build.gradle" }}
+      - run:
+          name: build
+          command: ./gradlew build
+      - save_cache:
+          key: goose-{{ .Branch }}-{{ checksum "build.gradle" }}
+          paths:
+            - "~/chaos/build"
+      - run:
+          name: test
+          command: ./gradlew test
+      - store_test_results:
+          path: "~/chaos/build/test-results"
+workflows:
+  version: 2
+  test-and-deploy:
+    jobs:
+      - test
