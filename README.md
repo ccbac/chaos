@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/ccbac/chaos.svg?style=shield)](https://circleci.com/gh/ccbac/chaos)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0546163dd1374024b9d70a31a6cfa499)](https://www.codacy.com/app/CCBAC/chaos?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ccbac/chaos&amp;utm_campaign=Badge_Grade)
+
 # Chaos
 
 DSLink to provide values for testing and demonstration.
