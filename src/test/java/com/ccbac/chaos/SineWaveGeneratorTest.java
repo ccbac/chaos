@@ -1,23 +1,13 @@
 package com.ccbac.chaos;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class SineWaveGeneratorTest {
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
-    void testPositiveRange() {
+    public void testPositiveRange() {
         SineWaveGenerator generator = new SineWaveGenerator(10.0, 20.0, 12.0);
         assertEquals(20.0, generator.nextValue(0), 0.001);
         assertEquals(15.0, generator.nextValue(3000), 0.001);
@@ -29,7 +19,7 @@ class SineWaveGeneratorTest {
     }
 
     @Test
-    void testStraddlingRange() {
+    public void testStraddlingRange() {
         SineWaveGenerator generator = new SineWaveGenerator(-10.0, 10.0, 12.0);
         assertEquals(10.0, generator.nextValue(0), 0.001);
         assertEquals(0.0, generator.nextValue(3000), 0.001);
@@ -40,7 +30,7 @@ class SineWaveGeneratorTest {
     }
 
     @Test
-    void testNegativeRange() {
+    public void testNegativeRange() {
         SineWaveGenerator generator = new SineWaveGenerator(-20.0, -10.0, 12.0);
         assertEquals(-10.0, generator.nextValue(0), 0.001);
         assertEquals(-15.0, generator.nextValue(3000), 0.001);
