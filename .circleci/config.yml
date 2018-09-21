@@ -27,4 +27,4 @@ workflows:
   version: 2
   test-and-deploy:
     jobs:
-      - test:
+      - test
